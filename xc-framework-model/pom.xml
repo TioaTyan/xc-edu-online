@@ -31,17 +31,21 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons -->
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.data</groupId>-->
+<!--        <artifactId>spring-data-commons</artifactId>-->
+<!--        <version>1.13.13.RELEASE</version>-->
+<!--    </dependency>-->
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework.data</groupId>-->
+<!--        <artifactId>spring-data-mongodb</artifactId>-->
+<!--        <version>1.10.9.RELEASE</version>-->
+<!--    </dependency>-->
     <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-commons</artifactId>
-        <version>1.13.13.RELEASE</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
-    <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-mongodb</artifactId>
-        <version>1.10.9.RELEASE</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-mongodb</artifactId>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
