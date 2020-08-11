@@ -15,9 +15,9 @@ import java.util.List;
 @Document(collection = "cms_config")
 public class CmsConfig {
 
-    @Id
-    private String id;
-    private String name;
-    private List<CmsConfigModel> model;
+	@Id
+	private String id;
+	private String name;
+	private List<CmsConfigModel> model;
 
 }

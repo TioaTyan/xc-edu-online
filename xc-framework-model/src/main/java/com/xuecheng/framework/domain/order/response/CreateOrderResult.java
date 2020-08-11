@@ -12,11 +12,12 @@ import lombok.ToString;
 @Data
 @ToString
 public class CreateOrderResult extends ResponseResult {
-    private XcOrders xcOrders;
-    public CreateOrderResult(ResultCode resultCode, XcOrders xcOrders) {
-        super(resultCode);
-        this.xcOrders = xcOrders;
-    }
+	private XcOrders xcOrders;
+
+	public CreateOrderResult(ResultCode resultCode, XcOrders xcOrders) {
+		super(resultCode);
+		this.xcOrders = xcOrders;
+	}
 
 
 }

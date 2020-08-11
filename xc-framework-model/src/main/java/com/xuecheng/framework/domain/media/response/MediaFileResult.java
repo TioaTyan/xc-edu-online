@@ -12,9 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class MediaFileResult extends ResponseResult {
-    MediaFile mediaFile;
-    public MediaFileResult(ResultCode resultCode, MediaFile mediaFile) {
-        super(resultCode);
-        this.mediaFile = mediaFile;
-    }
+	MediaFile mediaFile;
+
+	public MediaFileResult(ResultCode resultCode, MediaFile mediaFile) {
+		super(resultCode);
+		this.mediaFile = mediaFile;
+	}
 }

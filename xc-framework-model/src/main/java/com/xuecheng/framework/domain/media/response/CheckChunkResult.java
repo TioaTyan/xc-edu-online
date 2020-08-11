@@ -13,12 +13,13 @@ import lombok.ToString;
 @Data
 @ToString
 @NoArgsConstructor
-public class CheckChunkResult extends ResponseResult{
+public class CheckChunkResult extends ResponseResult {
 
-    public CheckChunkResult(ResultCode resultCode, boolean fileExist) {
-        super(resultCode);
-        this.fileExist = fileExist;
-    }
-    @ApiModelProperty(value = "文件分块存在标记", example = "true", required = true)
-    boolean fileExist;
+	@ApiModelProperty(value = "文件分块存在标记", example = "true", required = true)
+	boolean fileExist;
+
+	public CheckChunkResult(ResultCode resultCode, boolean fileExist) {
+		super(resultCode);
+		this.fileExist = fileExist;
+	}
 }

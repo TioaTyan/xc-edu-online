@@ -27,9 +27,8 @@ import java.util.Map;
 
 /**
  * http请求客户端
- * 
+ *
  * @author Administrator
- * 
  */
 public class HttpClient {
 	private String url;
@@ -38,6 +37,15 @@ public class HttpClient {
 	private String content;
 	private String xmlParam;
 	private boolean isHttps;
+
+	public HttpClient(String url, Map<String, String> param) {
+		this.url = url;
+		this.param = param;
+	}
+
+	public HttpClient(String url) {
+		this.url = url;
+	}
 
 	public boolean isHttps() {
 		return isHttps;
@@ -53,15 +61,6 @@ public class HttpClient {
 
 	public void setXmlParam(String xmlParam) {
 		this.xmlParam = xmlParam;
-	}
-
-	public HttpClient(String url, Map<String, String> param) {
-		this.url = url;
-		this.param = param;
-	}
-
-	public HttpClient(String url) {
-		this.url = url;
 	}
 
 	public void setParameter(Map<String, String> map) {
@@ -127,7 +126,7 @@ public class HttpClient {
 						.loadTrustMaterial(null, new TrustStrategy() {
 							// 信任所有
 							public boolean isTrusted(X509Certificate[] chain,
-									String authType)
+													 String authType)
 									throws CertificateException {
 								return true;
 							}

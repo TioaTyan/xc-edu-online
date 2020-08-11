@@ -13,18 +13,18 @@ import java.io.Serializable;
 @Data
 @ToString
 @Entity
-@Table(name="xc_orders_pay")
+@Table(name = "xc_orders_pay")
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 public class XcOrdersPay implements Serializable {
-    private static final long serialVersionUID = -916357210051689789L;
-    @Id
-    @GeneratedValue(generator = "jpa-uuid")
-    @Column(length = 32)
-    private String id;
-    @Column(name = "order_number")
-    private String orderNumber;
-    @Column(name = "pay_number")
-    private String payNumber;
-    private String status;
+	private static final long serialVersionUID = -916357210051689789L;
+	@Id
+	@GeneratedValue(generator = "jpa-uuid")
+	@Column(length = 32)
+	private String id;
+	@Column(name = "order_number")
+	private String orderNumber;
+	@Column(name = "pay_number")
+	private String payNumber;
+	private String status;
 
 }

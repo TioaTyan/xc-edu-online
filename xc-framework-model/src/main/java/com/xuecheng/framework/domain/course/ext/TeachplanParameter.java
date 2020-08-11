@@ -13,9 +13,9 @@ import java.util.List;
 @ToString
 public class TeachplanParameter extends Teachplan {
 
-    //二级分类ids
-    List<String> bIds;
-    //三级分类ids
-    List<String> cIds;
+	//二级分类ids
+	List<String> bIds;
+	//三级分类ids
+	List<String> cIds;
 
 }

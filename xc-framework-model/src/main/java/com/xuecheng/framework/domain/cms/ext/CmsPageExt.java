@@ -13,6 +13,6 @@ import lombok.ToString;
 @Data
 @ToString
 public class CmsPageExt extends CmsPage {
-    private String htmlValue;
+	private String htmlValue;
 
 }

@@ -17,10 +17,10 @@ import java.util.Date;
 public class UserTest {
 
 
-    @Id
-    private String id;
-    private String name;
+	@Id
+	private String id;
+	private String name;
 
-    @Column(name="create_time")
-    private Date createTime;
+	@Column(name = "create_time")
+	private Date createTime;
 }

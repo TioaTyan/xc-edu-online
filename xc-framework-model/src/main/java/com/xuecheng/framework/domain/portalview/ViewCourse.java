@@ -18,15 +18,15 @@ import java.io.Serializable;
 @Data
 @ToString
 @Document(collection = "view_course")
-public class ViewCourse implements Serializable{
+public class ViewCourse implements Serializable {
 
-    @Id
-    private String id;
-    private CourseBase courseBase;
-    private CourseMarket courseMarket;
-    private CoursePic coursePic;
-    private TeachplanNode teachplan;
-    //课程统计信息
-    private ReportCourse reportCourse;
+	@Id
+	private String id;
+	private CourseBase courseBase;
+	private CourseMarket courseMarket;
+	private CoursePic coursePic;
+	private TeachplanNode teachplan;
+	//课程统计信息
+	private ReportCourse reportCourse;
 
 }

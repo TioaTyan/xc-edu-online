@@ -14,20 +14,20 @@ import java.io.Serializable;
 @Data
 @ToString
 @Document(collection = "view_course_media")
-public class ViewCourseMedia implements Serializable{
+public class ViewCourseMedia implements Serializable {
 
-    @Id
-    @Column(name="teachplan_id")
-    private String teachplanId;
+	@Id
+	@Column(name = "teachplan_id")
+	private String teachplanId;
 
-    @Column(name="media_id")
-    private String mediaId;
+	@Column(name = "media_id")
+	private String mediaId;
 
-    @Column(name="media_fileoriginalname")
-    private String mediaFileOriginalName;
+	@Column(name = "media_fileoriginalname")
+	private String mediaFileOriginalName;
 
-    @Column(name="media_url")
-    private String mediaUrl;
-    private String courseId;
+	@Column(name = "media_url")
+	private String mediaUrl;
+	private String courseId;
 
 }
