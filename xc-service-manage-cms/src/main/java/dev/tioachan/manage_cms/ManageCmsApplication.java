@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @EntityScan("dev.tioachan.framework.domain.cms")
-@ComponentScan(basePackages = {"dev.tioachan.api","dev.tioachan.manage_cms"})
+@ComponentScan(basePackages = {"dev.tioachan.api"})
+@ComponentScan(basePackages = {"dev.tioachan.manage_cms","dev.tioachan.framework"})
 @SpringBootApplication(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
 public class ManageCmsApplication {
 
