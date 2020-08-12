@@ -5,10 +5,7 @@ spring:
     name: xs-service-manage-cms
   data:
     mongodb:
-      uri: mongodb://127.0.0.1:27017
+      uri: mongodb://root:123456@127.0.0.1:27017
       database: xcEdu
-      username: root
-      password: 123456
-      authentication-database: admin
 
 
