@@ -3,14 +3,18 @@ package dev.tioachan.manage_cms.dao;
 import dev.tioachan.framework.domain.cms.CmsPage;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+import java.util.List;
+
 public interface CmsPageRepository extends MongoRepository<CmsPage,String> {
 
-	//根据页面名称查询
-	CmsPage findByPageName(String pageName);
-	//根据页面名称和类型查询
-	CmsPage findByPageNameAndPageType(String pageName,String pageType);
-	//根据站点和页面类型查询记录数
-	int countBySiteIdAndPageType(String siteId,String pageType);
-	//根据站点和页面类型分页查询
-//	Page<CmsPage> findBySiteIdAndPageType(String siteId,String pageType, Pageable pageable);
+//	//根据页面名称查询
+//	CmsPage findByPageName(String pageName);
+//	//根据页面名称和类型查询
+//	CmsPage findByPageNameAndPageType(String pageName,String pageType);
+//	//根据站点和页面类型查询记录数
+//	int countBySiteIdAndPageType(String siteId,String pageType);
+//	//根据站点和页面类型分页查询
+////	Page<CmsPage> findBySiteIdAndPageType(String siteId,String pageType, Pageable pageable);
+//
+//	List<CmsPage> findBySiteId(String sideId);
 }
