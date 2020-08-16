@@ -11,8 +11,8 @@ import io.swagger.annotations.ApiOperation;
 public interface CmsPageControllerApi {
 	@ApiOperation("分页查询页面列表")
 	@ApiImplicitParams({
-			@ApiImplicitParam(name = "page",value = "页码",required = true,paramType = "path",dataType = "int"),
-			@ApiImplicitParam(name = "size",value = "每页记录数",required = true,paramType = "path",dataType = "int")
+			@ApiImplicitParam(name = "page", value = "页码", required = true, paramType = "path", dataType = "int"),
+			@ApiImplicitParam(name = "size", value = "每页记录数", required = true, paramType = "path", dataType = "int")
 	})
 	QueryResponseResult findList(Integer page, Integer size, QueryPageRequest queryPageRequest);
 }

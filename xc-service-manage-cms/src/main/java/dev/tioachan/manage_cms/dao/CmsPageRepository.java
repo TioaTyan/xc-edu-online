@@ -3,9 +3,7 @@ package dev.tioachan.manage_cms.dao;
 import dev.tioachan.framework.domain.cms.CmsPage;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
-
-public interface CmsPageRepository extends MongoRepository<CmsPage,String> {
+public interface CmsPageRepository extends MongoRepository<CmsPage, String> {
 
 //	//根据页面名称查询
 //	CmsPage findByPageName(String pageName);

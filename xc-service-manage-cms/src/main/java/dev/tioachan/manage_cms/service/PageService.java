@@ -17,14 +17,16 @@ public class PageService {
 
 	@Autowired
 	CmsPageRepository cmsPageRepository;
+
 	/**
 	 * 页面列表分页查询
-	 * @param page 当前页码
-	 * @param size 页面显示个数
+	 *
+	 * @param page             当前页码
+	 * @param size             页面显示个数
 	 * @param queryPageRequest 查询条件
 	 * @return 页面列表
 	 */
-	public QueryResponseResult findList(int page, int size, QueryPageRequest queryPageRequest){
+	public QueryResponseResult findList(int page, int size, QueryPageRequest queryPageRequest) {
 		if (queryPageRequest == null) {
 			queryPageRequest = new QueryPageRequest();
 		}
@@ -43,6 +45,6 @@ public class PageService {
 		cmsPageQueryResult.setList(all.getContent());
 		cmsPageQueryResult.setTotal(all.getTotalElements());
 		//返回结果
-		return new QueryResponseResult(CommonCode.SUCCESS,cmsPageQueryResult);
+		return new QueryResponseResult(CommonCode.SUCCESS, cmsPageQueryResult);
 	}
 }
