@@ -5,11 +5,14 @@ import dev.tioachan.framework.domain.cms.request.QueryPageRequest;
 import dev.tioachan.framework.model.response.CommonCode;
 import dev.tioachan.framework.model.response.QueryResponseResult;
 import dev.tioachan.framework.model.response.QueryResult;
+import dev.tioachan.framework.model.response.ResponseResult;
 import dev.tioachan.manage_cms.dao.CmsPageRepository;
 import dev.tioachan.manage_cms.service.PageService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class PageServiceImpl implements PageService {
@@ -79,5 +82,25 @@ public class PageServiceImpl implements PageService {
 		cmsPageQueryResult.setTotal(all.getTotalElements());
 		//返回结果
 		return new QueryResponseResult(CommonCode.SUCCESS, cmsPageQueryResult);
+	}
+
+	@Override
+	public ResponseResult addPage(CmsPage cmsPage) {
+		if (StringUtils.isEmpty(cmsPage.getSiteId())||StringUtils.isEmpty(cmsPage.getTemplateId())){
+			return new ResponseResult(CommonCode.FAIL);
+		}
+		cmsPageRepository.save(cmsPage);
+		return new ResponseResult(CommonCode.SUCCESS);
+	}
+
+	@Override
+	public ResponseResult delPage(String pageId) {
+		Optional<CmsPage> page = cmsPageRepository.findById(pageId);
+		if (page.isPresent()) {
+			CmsPage cmsPage = page.get();
+			cmsPageRepository.delete(cmsPage);
+			return new ResponseResult(CommonCode.SUCCESS);
+		}
+		return new ResponseResult(CommonCode.FAIL);
 	}
 }

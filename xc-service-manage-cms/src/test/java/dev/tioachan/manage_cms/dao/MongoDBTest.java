@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
 import org.springframework.test.context.junit4.SpringRunner;
+import sun.net.idn.Punycode;
 
+import java.security.PublicKey;
 import java.util.List;
 
 @SpringBootTest
@@ -122,5 +124,22 @@ public class MongoDBTest {
 		Page<CmsPage> all = cmsPageRepository.findAll(example, pageable);
 		List<CmsPage> content = all.getContent();
 		System.out.println(content);
+
+
+	}
+
+
+	@Test
+	//++i 返回的是 i 自增以后的值
+	//i++ 返回的是 i 自增以前的值
+	public void sda(){
+		int num=0;
+		int count=0;
+		for (int i = 0; i <= 5; i++) {
+			num=num+i;
+			count=count++;
+			System.out.println(num+" "+count);
+		}
+		System.out.println(num*count);
 	}
 }

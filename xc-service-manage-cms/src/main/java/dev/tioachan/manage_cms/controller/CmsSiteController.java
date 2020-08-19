@@ -22,6 +22,13 @@ public class CmsSiteController implements CmsSiteControllerApi {
 	@Override
 	@GetMapping("/list/")
 	public QueryResponseResult findList() {
+
+
+
 		return siteServiceImpl.findList();
+	}
+
+	public static void main(String[] args) {
+
 	}
 }
