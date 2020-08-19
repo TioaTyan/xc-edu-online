@@ -11,4 +11,8 @@ public interface PageService {
 	ResponseResult addPage(CmsPage cmsPage);
 
 	ResponseResult delPage(String pageId);
+
+	ResponseResult updatePage(CmsPage cmsPage);
+
+	CmsPage getPage(String pageId);
 }

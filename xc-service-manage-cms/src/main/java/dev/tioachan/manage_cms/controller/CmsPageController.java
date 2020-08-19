@@ -37,4 +37,9 @@ public class CmsPageController implements CmsPageControllerApi {
 //		System.out.println(cmsPage);
 		return pageServiceImpl.delPage(pageId);
 	}
+
+	@PutMapping("/edit")
+	public ResponseResult updatePage(@RequestBody CmsPage cmsPage){
+		return pageServiceImpl.updatePage(cmsPage);
+	}
 }

@@ -95,12 +95,30 @@ public class PageServiceImpl implements PageService {
 
 	@Override
 	public ResponseResult delPage(String pageId) {
-		Optional<CmsPage> page = cmsPageRepository.findById(pageId);
-		if (page.isPresent()) {
-			CmsPage cmsPage = page.get();
-			cmsPageRepository.delete(cmsPage);
+		CmsPage page = getPage(pageId);
+		if (page!=null) {
+			cmsPageRepository.delete(page);
 			return new ResponseResult(CommonCode.SUCCESS);
 		}
 		return new ResponseResult(CommonCode.FAIL);
+	}
+
+	@Override
+	public ResponseResult updatePage(CmsPage cmsPage) {
+		CmsPage page = getPage(cmsPage.getPageId());
+		if (page!=null){
+			cmsPageRepository.save(cmsPage);
+			return new ResponseResult(CommonCode.SUCCESS);
+		}
+		return new ResponseResult(CommonCode.FAIL);
+	}
+
+	@Override
+	public CmsPage getPage(String pageId) {
+		Optional<CmsPage> page = cmsPageRepository.findById(pageId);
+		if (page.isPresent()) {
+			return page.get();
+		}
+		return null;
 	}
 }
