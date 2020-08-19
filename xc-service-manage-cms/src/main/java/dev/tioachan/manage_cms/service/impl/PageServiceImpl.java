@@ -2,6 +2,7 @@ package dev.tioachan.manage_cms.service.impl;
 
 import dev.tioachan.framework.domain.cms.CmsPage;
 import dev.tioachan.framework.domain.cms.request.QueryPageRequest;
+import dev.tioachan.framework.exception.ExceptionCast;
 import dev.tioachan.framework.model.response.CommonCode;
 import dev.tioachan.framework.model.response.QueryResponseResult;
 import dev.tioachan.framework.model.response.QueryResult;
@@ -87,7 +88,7 @@ public class PageServiceImpl implements PageService {
 	@Override
 	public ResponseResult addPage(CmsPage cmsPage) {
 		if (StringUtils.isEmpty(cmsPage.getSiteId())||StringUtils.isEmpty(cmsPage.getTemplateId())){
-			return new ResponseResult(CommonCode.FAIL);
+			ExceptionCast.cast(CommonCode.INVALID_PARAM);
 		}
 		cmsPageRepository.save(cmsPage);
 		return new ResponseResult(CommonCode.SUCCESS);
@@ -96,21 +97,21 @@ public class PageServiceImpl implements PageService {
 	@Override
 	public ResponseResult delPage(String pageId) {
 		CmsPage page = getPage(pageId);
-		if (page!=null) {
-			cmsPageRepository.delete(page);
-			return new ResponseResult(CommonCode.SUCCESS);
+		if (page==null) {
+			ExceptionCast.cast(CommonCode.INVALID_PARAM);
 		}
-		return new ResponseResult(CommonCode.FAIL);
+		cmsPageRepository.delete(page);
+		return new ResponseResult(CommonCode.SUCCESS);
 	}
 
 	@Override
 	public ResponseResult updatePage(CmsPage cmsPage) {
 		CmsPage page = getPage(cmsPage.getPageId());
-		if (page!=null){
-			cmsPageRepository.save(cmsPage);
-			return new ResponseResult(CommonCode.SUCCESS);
+		if (page==null){
+			ExceptionCast.cast(CommonCode.INVALID_PARAM);
 		}
-		return new ResponseResult(CommonCode.FAIL);
+		cmsPageRepository.save(cmsPage);
+		return new ResponseResult(CommonCode.SUCCESS);
 	}
 
 	@Override
