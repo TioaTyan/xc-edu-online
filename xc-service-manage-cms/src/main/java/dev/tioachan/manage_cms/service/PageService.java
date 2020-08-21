@@ -15,4 +15,6 @@ public interface PageService {
 	ResponseResult updatePage(CmsPage cmsPage);
 
 	CmsPage getPage(String pageId);
+
+	String getPageHtml(String pageId);
 }
