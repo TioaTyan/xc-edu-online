@@ -32,9 +32,9 @@ public class FileSystem {
 	//用户id，用于授权
 	private String userId;
 	//业务key
-	private String businesskey;
+	private String businessKey;
 	//业务标签
-	private String filetag;
+	private String fileTag;
 	//文件元信息
 	private Map metadata;
 
