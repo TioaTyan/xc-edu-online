@@ -15,7 +15,9 @@ import dev.tioachan.manage_course.dao.CourseDao;
 import dev.tioachan.manage_course.dao.CoursePicRepository;
 import dev.tioachan.manage_course.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -97,8 +99,11 @@ public class CourseServiceImpl implements CourseService {
 		return new ResponseResult(CommonCode.SUCCESS);
 	}
 
+	//https://www.cnblogs.com/sxdcgaq8080/p/8984140.html
 	@Override
-	public ResponseResult deleteCoursePic(String courseId, String pictureId) {
+	@Modifying
+	@Transactional
+	public ResponseResult deleteCoursePic(String courseId) {
 //		执行删除，返回1表示删除成功，返回0表示删除失败
 		long result = coursePicRepository.deleteByCourseid(courseId);
 		if (result > 0) {

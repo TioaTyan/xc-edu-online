@@ -32,15 +32,15 @@ public class CourseController implements CourseControllerApi {
 	}
 
 	@Override
-	@PutMapping("/coursePic/{courseId}")
+	@PostMapping("/coursePic/{courseId}")
 	public ResponseResult addCoursePic(@PathVariable("courseId")String courseId, String pictureId) {
 		return courseService.addCoursePic(courseId,pictureId);
 	}
 
 	@Override
 	@DeleteMapping("/coursePic/{courseId}")
-	public ResponseResult deleteCoursePic(@PathVariable("courseId")String courseId,String pictureId) {
-		return courseService.deleteCoursePic(courseId,pictureId);
+	public ResponseResult deleteCoursePic(@PathVariable("courseId")String courseId) {
+		return courseService.deleteCoursePic(courseId);
 	}
 
 	@Override

@@ -16,5 +16,5 @@ public interface CourseService {
 
 	ResponseResult addCoursePic(String courseId, String pictureId);
 
-	ResponseResult deleteCoursePic(String courseId, String pictureId);
+	ResponseResult deleteCoursePic(String courseId);
 }
