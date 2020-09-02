@@ -52,7 +52,7 @@ class FastdfsDemoApplicationTests {
 	}
 	@Test
 	public void uploadTest() throws IOException {
-		String file = fastDFSClient.uploadFile(new File("/Users/tioachan/Pictures/Wallpaper/FF/HayCxDK.jpg"));
+		String file = fastDFSClient.uploadFile(new File("C:\\Users\\TioaChan\\OneDrive\\Wallpaper\\81179-106.jpg"));
 		System.out.println(file);
 	}
 }
