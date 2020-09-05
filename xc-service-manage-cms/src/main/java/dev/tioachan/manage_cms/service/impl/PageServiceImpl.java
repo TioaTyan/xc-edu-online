@@ -189,6 +189,7 @@ public class PageServiceImpl implements PageService {
 		return html;
 	}
 
+
 	//页面静态化
 	public String generateHtml(String template, Map model) {
 		try {

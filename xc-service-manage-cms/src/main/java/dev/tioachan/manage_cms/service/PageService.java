@@ -17,4 +17,5 @@ public interface PageService {
 	CmsPage getPage(String pageId);
 
 	String getPageHtml(String pageId);
+
 }

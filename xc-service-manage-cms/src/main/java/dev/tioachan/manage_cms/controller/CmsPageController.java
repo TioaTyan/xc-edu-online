@@ -26,6 +26,12 @@ public class CmsPageController implements CmsPageControllerApi {
 		return pageServiceImpl.findList(page, size, queryPageRequest);
 	}
 
+	@Override
+	@GetMapping("/get/{id}")
+	public CmsPage findById(@PathVariable("id") String pageId) {
+		return pageServiceImpl.getPage(pageId);
+	}
+
 	@PostMapping("/add")
 	public ResponseResult add(@RequestBody CmsPage cmsPage){
 //		System.out.println(cmsPage);
