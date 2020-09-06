@@ -3,6 +3,8 @@ package dev.tioachan.filesystem;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication//扫描所在包及子包的bean，注入到ioc中
@@ -10,6 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages={"dev.tioachan.api"})//扫描接口
 @ComponentScan(basePackages={"dev.tioachan.framework"})//扫描common下的所有类
 @ComponentScan(basePackages={"dev.tioachan.filesystem"})//扫描本项目下的所有类
+@EnableEurekaClient
+@EnableFeignClients
 public class XcFileSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(XcFileSystemApplication.class);
