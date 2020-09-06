@@ -2,6 +2,7 @@ package dev.tioachan.api.course;
 
 import dev.tioachan.framework.domain.cms.request.QueryPageRequest;
 import dev.tioachan.framework.domain.course.CourseBase;
+import dev.tioachan.framework.domain.course.CourseMarket;
 import dev.tioachan.framework.domain.course.CoursePic;
 import dev.tioachan.framework.domain.course.request.CourseListRequest;
 import dev.tioachan.framework.domain.course.response.AddCourseResult;
@@ -51,4 +52,9 @@ public interface CourseControllerApi {
 //	AddCourseResult addCourseBase(@RequestBody CourseBase courseBase) ;
 //
 //	ResponseResult updateCourseBase(@PathVariable("id") String id, @RequestBody CourseBase courseBase);
+
+	@ApiOperation("获取课程营销信息")
+	CourseMarket getCourseMarketById(String courseId);
+	@ApiOperation("更新课程营销信息")
+	ResponseResult updateCourseMarket(String id, CourseMarket courseMarket);
 }

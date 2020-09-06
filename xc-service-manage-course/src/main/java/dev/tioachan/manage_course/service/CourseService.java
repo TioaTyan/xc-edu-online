@@ -2,6 +2,7 @@ package dev.tioachan.manage_course.service;
 
 import dev.tioachan.framework.domain.cms.request.QueryPageRequest;
 import dev.tioachan.framework.domain.course.CourseBase;
+import dev.tioachan.framework.domain.course.CourseMarket;
 import dev.tioachan.framework.domain.course.CoursePic;
 import dev.tioachan.framework.domain.course.request.CourseListRequest;
 import dev.tioachan.framework.model.response.QueryResponseResult;
@@ -17,4 +18,8 @@ public interface CourseService {
 	ResponseResult addCoursePic(String courseId, String pictureId);
 
 	ResponseResult deleteCoursePic(String courseId);
+
+	CourseMarket getCourseMarketById(String courseId);
+
+	CourseMarket updateCourseMarket(String id, CourseMarket courseMarket);
 }
